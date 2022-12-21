@@ -1,0 +1,20 @@
+{
+  "name": "food",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server":"npx json-server db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theIvanChornyi/udemiJsPt4Hw1.git"
+  },
+  "author": "Ivan Chornyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theIvanChornyi/udemiJsPt4Hw1/issues"
+  },
+  "homepage": "https://github.com/theIvanChornyi/udemiJsPt4Hw1#readme"
+}

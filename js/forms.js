@@ -1,5 +1,6 @@
 'use strict';
 import { showThankDialog } from './thanksModal.js';
+import { postData } from './requests.js';
 
 const forms = document.querySelectorAll('form');
 const message = {
@@ -16,21 +17,12 @@ function postFormData(form) {
     const statusMessage = showSpinner(form);
 
     const formData = new FormData(form);
-    const object = {};
-    formData.forEach((value, key) => {
-      object[key] = value;
-    });
 
-    fetch('server.php', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'aplication/json',
-      },
-      body: JSON.stringify(object),
-    })
+    const json = JSON.stringify(Object.fromEntries(formData.entries()));
+    postData('http://localhost:3000/requests', json)
       .then(data => {
         showThankDialog(message.sucess);
-        console.log(data.body);
+        console.log(data);
       })
       .catch(() => {
         showThankDialog(message.reject);

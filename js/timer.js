@@ -1,6 +1,6 @@
 'use-strict';
 window.addEventListener('DOMContentLoaded', () => {
-  const deadline = '2023-1-1';
+  const deadline = '2023-5-20';
 
   const getTimeRemaining = endtime => {
     const normalizeDeadline = Date.parse(endtime) - new Date();
