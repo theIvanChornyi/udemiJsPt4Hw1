@@ -13,35 +13,42 @@ forms.forEach(form => postFormData(form));
 function postFormData(form) {
   form.addEventListener('submit', e => {
     e.preventDefault();
-    const statusMessage = document.createElement('img');
-    statusMessage.src = message.pending;
-    statusMessage.style.cssText = `
-    display: block;
-    margin: 0 auto;
-    `;
-    form.insertAdjacentElement('afterend', statusMessage);
+    const statusMessage = showSpinner(form);
 
-    const request = new XMLHttpRequest();
-    request.open('POST', 'server.php');
-    request.setRequestHeader('Content-type', 'aplication/json');
     const formData = new FormData(form);
-
     const object = {};
     formData.forEach((value, key) => {
       object[key] = value;
     });
-    const json = JSON.stringify(object);
-    request.send(json);
-    request.addEventListener('load', () => {
-      if (request.status === 200) {
-        showThankDialog(message.sucess);
-        console.dir(request.response);
-      } else {
-        showThankDialog(message.reject);
-      }
-      statusMessage.remove();
-    });
 
-    form.reset();
+    fetch('server.php', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'aplication/json',
+      },
+      body: JSON.stringify(object),
+    })
+      .then(data => {
+        showThankDialog(message.sucess);
+        console.log(data.body);
+      })
+      .catch(() => {
+        showThankDialog(message.reject);
+      })
+      .finally(() => {
+        statusMessage.remove();
+        form.reset();
+      });
   });
+}
+
+function showSpinner(form) {
+  const statusMessage = document.createElement('img');
+  statusMessage.src = message.pending;
+  statusMessage.style.cssText = `
+    display: block;
+    margin: 0 auto;
+    `;
+  form.insertAdjacentElement('afterend', statusMessage);
+  return statusMessage;
 }
