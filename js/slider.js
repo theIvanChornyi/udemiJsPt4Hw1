@@ -7,6 +7,8 @@ let currentSlide = 1;
 const slidesAmount = slidesArr.length;
 
 slideAmountNumber.textContent = padNum(slidesAmount);
+currentSlideNumber.textContent = padNum(currentSlide);
+
 showSlides();
 sliderControls.addEventListener('click', changeSlide);
 
