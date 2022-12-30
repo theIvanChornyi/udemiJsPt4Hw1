@@ -34,7 +34,9 @@ window.addEventListener('DOMContentLoaded', () => {
       hours.textContent = `${deadline.hours}`.padStart(2, 0);
       minutes.textContent = `${deadline.minutes}`.padStart(2, 0);
       seconds.textContent = `${deadline.seconds}`.padStart(2, 0);
-      if (deadline.total <= 10) clearInterval(clockInterval);
+      if (deadline.total <= 10) {
+        clearInterval(clockInterval);
+      }
     };
 
     updateClock();
