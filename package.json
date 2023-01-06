@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "server": "npx json-server db.json",
-    "build": "webpack"
+    "build": "webpack --mode=production",
+    "start": "webpack watch"
   },
   "repository": {
     "type": "git",

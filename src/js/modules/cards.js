@@ -1,5 +1,5 @@
 const { getData } = require('../helpers/requests');
-const MenuCard = require('./menuCard.js');
+const MenuCard = require('../template/menuCard.js');
 
 function cards() {
   getData('http://localhost:3000/menu').then(createCard);

@@ -4,7 +4,6 @@ const {
   carousel,
   cookie,
   forms,
-  menuCard,
   modal,
   tabs,
   thanksModal,

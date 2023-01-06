@@ -3,7 +3,6 @@ const cards = require('./cards');
 const carousel = require('./carousel');
 const cookie = require('./cookie');
 const forms = require('./forms');
-const menuCard = require('./menuCard');
 const modal = require('./modal');
 const tabs = require('./tabs');
 const thanksModal = require('./thanksModal');
@@ -15,7 +14,6 @@ module.exports = {
   carousel,
   cookie,
   forms,
-  menuCard,
   modal,
   tabs,
   thanksModal,
