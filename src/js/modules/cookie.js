@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+function cookie() {
   class CookieConsent {
     constructor({ popup, btnConfirm, btnCancel, activeClass = '' } = {}) {
       this.popup = document.querySelector(popup);
@@ -71,4 +71,6 @@ window.addEventListener('DOMContentLoaded', () => {
   function myScripts() {
     console.log('Loading...');
   }
-});
+}
+
+module.exports = cookie;

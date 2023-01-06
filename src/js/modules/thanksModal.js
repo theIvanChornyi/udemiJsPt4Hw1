@@ -1,11 +1,9 @@
-import { openModal, closeModal } from './modal.js';
-
-export function showThankDialog(message) {
+function showThankDialog(message) {
   const prevModalDialog = document.querySelector('.modal__dialog');
   const modal = document.querySelector('.modal');
 
   prevModalDialog.classList.add('hide');
-  openModal();
+  // openModal();
 
   const thankMessage = document.createElement('div');
   thankMessage.classList.add('modal__dialog');
@@ -21,6 +19,8 @@ export function showThankDialog(message) {
     prevModalDialog.classList.add('show');
     prevModalDialog.classList.remove('hide');
 
-    closeModal();
+    // closeModal();
   }, 4000);
 }
+
+module.exports = showThankDialog;

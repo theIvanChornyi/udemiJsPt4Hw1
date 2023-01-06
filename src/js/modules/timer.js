@@ -1,5 +1,6 @@
 'use-strict';
-window.addEventListener('DOMContentLoaded', () => {
+
+function timer() {
   const deadline = '2023-5-20';
 
   const getTimeRemaining = endtime => {
@@ -44,4 +45,6 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   timer('.promotion__timer', deadline);
-});
+}
+
+module.exports = timer;

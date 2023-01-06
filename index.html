@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Food</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/cookieConsisst.css" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="src/css/cookieConsisst.css" />
   </head>
   <body>
     <header class="header">
       <div class="header__left-block">
         <div class="header__logo">
-          <img src="icons/logo.svg" alt="Логотип" />
+          <img src="src/icons/logo.svg" alt="Логотип" />
         </div>
         <nav class="header__links">
           <a href="#" class="header__link">Доставка питания</a>
@@ -26,10 +26,10 @@
       <div class="sidepanel__text"><span>Социальные сети</span></div>
       <div class="sidepanel__divider"></div>
       <a href="#" class="sidepanel__icon">
-        <img src="icons/instagram.svg" alt="instagram" />
+        <img src="src/icons/instagram.svg" alt="instagram" />
       </a>
       <a href="#" class="sidepanel__icon">
-        <img src="icons/facebook.svg" alt="facebook" />
+        <img src="src/icons/facebook.svg" alt="facebook" />
       </a>
     </div>
 
@@ -38,7 +38,7 @@
       <div class="container">
         <div class="tabcontainer">
           <div class="tabcontent">
-            <img src="img/tabs/vegy.jpg" alt="vegy" />
+            <img src="src/img/tabs/vegy.jpg" alt="vegy" />
             <div class="tabcontent__descr">
               Меню "Фитнес" - это новый подход к приготовлению блюд: больше
               свежих овощей и фруктов. Для людей, которые интересуются спортом;
@@ -47,7 +47,7 @@
             </div>
           </div>
           <div class="tabcontent">
-            <img src="img/tabs/elite.jpg" alt="elite" />
+            <img src="src/img/tabs/elite.jpg" alt="elite" />
             <div class="tabcontent__descr">
               Меню “Премиум” - мы используем не только красивый дизайн упаковки,
               но и качественное исполнение блюд. Красная рыба, морепродукты,
@@ -55,7 +55,7 @@
             </div>
           </div>
           <div class="tabcontent">
-            <img src="img/tabs/post.jpg" alt="post" />
+            <img src="src/img/tabs/post.jpg" alt="post" />
             <div class="tabcontent__descr">
               Наше специальное “Постное меню” - это тщательный подбор
               ингредиентов: полное отсутствие продуктов животного происхождения.
@@ -64,7 +64,7 @@
             </div>
           </div>
           <div class="tabcontent">
-            <img src="img/tabs/vegy.jpg" alt="vegy" />
+            <img src="src/img/tabs/vegy.jpg" alt="vegy" />
             <div class="tabcontent__descr">
               Меню "Сбалансированное" - это соответствие вашего рациона всем
               научным рекомендациям. Мы тщательно просчитываем вашу потребность
@@ -121,28 +121,28 @@
         <div class="offer__slider">
           <div class="offer__slider-counter">
             <div class="offer__slider-prev" data-action="prev">
-              <img src="icons/left.svg" alt="prev" />
+              <img src="src/icons/left.svg" alt="prev" />
             </div>
             <span id="current">03</span>
             /
             <span id="total">04</span>
             <div class="offer__slider-next" data-action="next">
-              <img src="icons/right.svg" alt="next" />
+              <img src="src/icons/right.svg" alt="next" />
             </div>
           </div>
           <div class="offer__slider-wrapper">
             <div class="offer_slider-inner">
               <div class="offer__slide">
-                <img src="img/slider/pepper.jpg" alt="pepper" />
+                <img src="src/img/slider/pepper.jpg" alt="pepper" />
               </div>
               <div class="offer__slide">
-                <img src="img/slider/food-12.jpg" alt="food" />
+                <img src="src/img/slider/food-12.jpg" alt="food" />
               </div>
               <div class="offer__slide">
-                <img src="img/slider/olive-oil.jpg" alt="oil" />
+                <img src="src/img/slider/olive-oil.jpg" alt="oil" />
               </div>
               <div class="offer__slide">
-                <img src="img/slider/paprika.jpg" alt="paprika" />
+                <img src="src/img/slider/paprika.jpg" alt="paprika" />
               </div>
             </div>
           </div>
@@ -259,7 +259,7 @@
             type="phone"
             class="order__input"
           />
-          <img src="icons/right.svg" alt="right" />
+          <img src="src/icons/right.svg" alt="right" />
           <button class="btn btn_dark btn_min">Перезвонить мне</button>
         </form>
       </div>
@@ -312,7 +312,7 @@
           <a href="#" class="link">facebook</a>
         </div>
         <div class="pepper">
-          <img src="icons/veg.svg" alt="pepper" />
+          <img src="src/icons/veg.svg" alt="pepper" />
         </div>
         <div class="call">
           <div class="subtitle">Или позвоните нам</div>
@@ -357,15 +357,6 @@
         <button class="btn_cookie" data-cookie="true">Соглашаюсь</button>
       </div>
     </div>
-    <script src="./js/cookie.js" type="module"></script>
-    <script src="./js/tabs.js" type="module"></script>
-    <script src="./js/timer.js" type="module"></script>
-    <script src="./js/modal.js" type="module"></script>
-    <script src="./js/cards.js" type="module"></script>
-    <script src="./js/forms.js" type="module"></script>
-    <script src="./js/thanksModal.js" type="module"></script>
-    <!-- <script src="./js/slider.js" type="module"></script> -->
-    <script src="./js/carousel.js" type="module"></script>
-    <script src="./js/calculator.js" type="module"></script>
+    <script src="./dist/bundle.js" type="module"></script>
   </body>
 </html>
