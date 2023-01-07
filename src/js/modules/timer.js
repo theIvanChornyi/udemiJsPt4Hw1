@@ -1,6 +1,4 @@
-'use-strict';
-
-function timer() {
+export function timer() {
   const deadline = '2023-5-20';
 
   const getTimeRemaining = endtime => {
@@ -46,5 +44,3 @@ function timer() {
 
   timer('.promotion__timer', deadline);
 }
-
-module.exports = timer;

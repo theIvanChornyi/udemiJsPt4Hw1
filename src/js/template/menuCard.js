@@ -1,4 +1,4 @@
-class MenuCard {
+export class MenuCard {
   constructor(title, text, price, picture, alt, ...clases) {
     this.title = title;
     this.text = text;
@@ -30,5 +30,3 @@ class MenuCard {
     elem.insertAdjacentHTML('beforeend', this.html);
   }
 }
-
-module.exports = MenuCard;

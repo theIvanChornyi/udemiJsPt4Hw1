@@ -1,4 +1,4 @@
-function calculator() {
+export function calculator() {
   const resultRef = document.querySelector('.calculating__result span');
 
   const initObj = {
@@ -124,4 +124,3 @@ function calculator() {
   );
   getInputsData('.calculating__choose_medium');
 }
-module.exports = calculator;

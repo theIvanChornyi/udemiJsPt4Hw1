@@ -1,23 +1,24 @@
-const {
+import {
   calculator,
   cards,
   carousel,
   cookie,
   forms,
   modal,
+  openModal,
   tabs,
-  thanksModal,
   timer,
-} = require('./modules');
+} from './modules';
 
 window.addEventListener('DOMContentLoaded', () => {
+  const openModalTimerId = setTimeout(openModal, 20000);
+
   calculator();
   cards();
   carousel();
   cookie();
-  forms();
+  forms(openModalTimerId);
   timer();
   tabs();
-  modal();
-  thanksModal();
+  modal(openModalTimerId);
 });

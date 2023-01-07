@@ -1,4 +1,4 @@
-function carousel() {
+export function carousel() {
   const slider = document.querySelector('.offer__slider');
   const sliderWindow = slider.querySelector('.offer__slider-wrapper');
   const sliderWrpapper = sliderWindow.querySelector('.offer_slider-inner');
@@ -100,5 +100,3 @@ function carousel() {
     }
   }
 }
-
-module.exports = carousel;

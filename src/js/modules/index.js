@@ -1,21 +1,9 @@
-const calculator = require('./calculator');
-const cards = require('./cards');
-const carousel = require('./carousel');
-const cookie = require('./cookie');
-const forms = require('./forms');
-const modal = require('./modal');
-const tabs = require('./tabs');
-const thanksModal = require('./thanksModal');
-const timer = require('./timer');
-
-module.exports = {
-  calculator,
-  cards,
-  carousel,
-  cookie,
-  forms,
-  modal,
-  tabs,
-  thanksModal,
-  timer,
-};
+export { calculator } from './calculator';
+export { cards } from './cards';
+export { carousel } from './carousel';
+export { cookie } from './cookie';
+export { forms } from './forms';
+export { modal, openModal, closeModal } from './modal';
+export { tabs } from './tabs';
+export { showThankDialog } from './thanksModal';
+export { timer } from './timer';

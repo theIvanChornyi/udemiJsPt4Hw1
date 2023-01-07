@@ -1,7 +1,7 @@
-const { getData } = require('../helpers/requests');
-const MenuCard = require('../template/menuCard.js');
+import { getData } from '../helpers/requests';
+import { MenuCard } from '../template/menuCard.js';
 
-function cards() {
+export function cards() {
   getData('http://localhost:3000/menu').then(createCard);
 
   const menu = document.querySelector('.menu .container');
@@ -11,5 +11,3 @@ function cards() {
     );
   }
 }
-
-module.exports = cards;

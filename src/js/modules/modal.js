@@ -1,43 +1,9 @@
-'use strict';
-
-function modal() {
-  const modal = document.querySelector('.modal');
+export function modal(openModalTimerId) {
   const openModalBtns = document.querySelectorAll('[data-modalOpen]');
-  const openModalTimerId = setTimeout(openModal, 20000);
 
   openModalBtns.forEach(trigger =>
     trigger.addEventListener('click', openModal)
   );
-
-  function openModal() {
-    modal.focus();
-    modal.classList.add('show');
-    modal.classList.remove('hide');
-    modal.addEventListener('click', backdropCloseModal, { once: true });
-    window.addEventListener('keydown', keyboardCloseModal, { once: true });
-    document.body.style.overflow = 'hidden';
-    clearInterval(openModalTimerId);
-  }
-
-  function backdropCloseModal(e) {
-    if (
-      e.target === e.currentTarget ||
-      e.target.getAttribute('data-modalClose') === ''
-    ) {
-      closeModal();
-    }
-  }
-  function keyboardCloseModal(e) {
-    if (e.code === 'Escape' && modal.classList.contains('show')) {
-      closeModal();
-    }
-  }
-
-  function closeModal() {
-    modal.classList.add('hide');
-    modal.classList.remove('show');
-    document.body.style.overflow = 'unset';
-  }
 
   window.addEventListener('scroll', onEndOfPage);
 
@@ -48,9 +14,40 @@ function modal() {
     const isEndOfPage = leave + screenSize >= pageSize;
 
     if (isEndOfPage) {
-      openModal();
+      openModal(openModalTimerId);
       window.removeEventListener('scroll', onEndOfPage);
     }
   }
 }
-module.exports = modal;
+
+const modalRef = document.querySelector('.modal');
+
+export function openModal(openModalTimerId) {
+  modalRef.focus();
+  modalRef.classList.add('show');
+  modalRef.classList.remove('hide');
+  modalRef.addEventListener('click', backdropCloseModal, { once: true });
+  window.addEventListener('keydown', keyboardCloseModal, { once: true });
+  document.body.style.overflow = 'hidden';
+  clearInterval(openModalTimerId);
+}
+
+export function closeModal() {
+  modalRef.classList.add('hide');
+  modalRef.classList.remove('show');
+  document.body.style.overflow = 'unset';
+}
+
+function backdropCloseModal(e) {
+  if (
+    e.target === e.currentTarget ||
+    e.target.getAttribute('data-modalClose') === ''
+  ) {
+    closeModal();
+  }
+}
+function keyboardCloseModal(e) {
+  if (e.code === 'Escape' && modalRef.classList.contains('show')) {
+    closeModal();
+  }
+}

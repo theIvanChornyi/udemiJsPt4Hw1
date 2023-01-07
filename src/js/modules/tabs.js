@@ -1,6 +1,4 @@
-'use strict';
-
-function tabs() {
+export function tabs() {
   const tabs = document.querySelectorAll('.tabheader__item'),
     tabsContent = document.querySelectorAll('.tabcontent'),
     tabsParent = document.querySelector('.tabheader__items');
@@ -40,5 +38,3 @@ function tabs() {
     });
   }
 }
-
-module.exports = tabs;

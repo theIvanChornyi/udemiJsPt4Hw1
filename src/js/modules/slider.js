@@ -1,4 +1,4 @@
-function slider() {
+export function slider() {
   const slidesArr = document.querySelectorAll('.offer__slide');
   const sliderControls = document.querySelector('.offer__slider-counter');
   const currentSlideNumber = sliderControls.querySelector('#current');
@@ -48,4 +48,3 @@ function slider() {
     return `${num}`.padStart(2, 0);
   }
 }
-module.exports = slider;

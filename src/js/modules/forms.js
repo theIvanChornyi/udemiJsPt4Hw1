@@ -1,8 +1,7 @@
-'use strict';
-const showThankDialog = require('./thanksModal');
-const { postData } = require('../helpers/requests');
+import { showThankDialog } from './thanksModal';
+import { postData } from '../helpers/requests';
 
-function forms() {
+export function forms(openModalTimerId) {
   const forms = document.querySelectorAll('form');
   const message = {
     pending: 'src/img/form/spinner.svg',
@@ -16,17 +15,15 @@ function forms() {
     form.addEventListener('submit', e => {
       e.preventDefault();
       const statusMessage = showSpinner(form);
-
       const formData = new FormData(form);
-
       const json = JSON.stringify(Object.fromEntries(formData.entries()));
       postData('http://localhost:3000/requests', json)
         .then(data => {
-          showThankDialog(message.sucess);
+          showThankDialog(message.sucess, openModalTimerId);
           console.log(data);
         })
         .catch(() => {
-          showThankDialog(message.reject);
+          showThankDialog(message.reject, openModalTimerId);
         })
         .finally(() => {
           statusMessage.remove();
@@ -46,5 +43,3 @@ function forms() {
     return statusMessage;
   }
 }
-
-module.exports = forms;

@@ -1,4 +1,4 @@
-async function postData(url, data) {
+export async function postData(url, data) {
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -13,7 +13,7 @@ async function postData(url, data) {
   return response.json();
 }
 
-async function getData(url) {
+export async function getData(url) {
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`Could not fetch ${url}, status:${response.status}`);
@@ -21,5 +21,3 @@ async function getData(url) {
 
   return response.json();
 }
-
-module.exports = { postData, getData };

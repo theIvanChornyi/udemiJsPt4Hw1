@@ -1,4 +1,4 @@
-function cookie() {
+export function cookie() {
   class CookieConsent {
     constructor({ popup, btnConfirm, btnCancel, activeClass = '' } = {}) {
       this.popup = document.querySelector(popup);
@@ -72,5 +72,3 @@ function cookie() {
     console.log('Loading...');
   }
 }
-
-module.exports = cookie;
